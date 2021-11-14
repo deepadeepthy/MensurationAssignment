@@ -21,6 +21,12 @@ public class ShapesOperationsTest {
     }
 
     @Test
+    void testForNegativeOrZeroInputValueOfRectangle(){
+        ShapesOperations rectangle = new ShapesOperations(-10,15);
+        assertEquals(-10,rectangle.getRectanglesPerimeter());
+    }
+
+    @Test
     void testForAreaOfSquare(){
         ShapesOperations square = new ShapesOperations(10);
         assertEquals(100,square.getSquaresArea());
@@ -30,5 +36,11 @@ public class ShapesOperationsTest {
     void testForPerimeterOfSquare(){
         ShapesOperations square = new ShapesOperations(10);
         assertEquals(40,square.getSquaresPerimeter());
+    }
+
+    @Test
+    void testForNegativeOrZeroInputValueOfSquare(){
+        ShapesOperations square = new ShapesOperations(0);
+        assertEquals(0,square.getSquaresPerimeter());
     }
 }
