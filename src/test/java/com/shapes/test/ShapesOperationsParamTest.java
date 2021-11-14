@@ -46,5 +46,20 @@ public class ShapesOperationsParamTest {
         );
     }
 
+    public static Stream<Arguments> valuesToTestAreaOfSquare() {
+        return Stream.of(
+                Arguments.of(4,16),
+                Arguments.of(-8,-8),
+                Arguments.of(0,0)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("valuesToTestAreaOfSquare")
+    void testForAreaOfSquare(double length,double expectedArea){
+        ShapesOperations square=new ShapesOperations(length);
+        assertEquals(expectedArea,square.getSquaresArea());
+    }
+
 
 }
