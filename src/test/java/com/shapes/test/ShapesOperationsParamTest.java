@@ -4,10 +4,12 @@ import com.shapes.ShapesOperations;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ShapesOperationsParamTest {
 
@@ -61,5 +63,11 @@ public class ShapesOperationsParamTest {
         assertEquals(expectedArea,square.getSquaresArea());
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = { 2, 3, 5 } )
+    void testForMultipleOf3(int number){
+        ShapesOperations numberTest=new ShapesOperations(number);
+        assertTrue(numberTest.isMultipleOf3());
+    }
 
 }

@@ -46,4 +46,10 @@ public class ShapesOperations {
             return length;
         return 4 * length;
     }
+
+    public boolean isMultipleOf3() {
+        if(length % 3 == 0)
+            return true;
+        return false;
+    }
 }
